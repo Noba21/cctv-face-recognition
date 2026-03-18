@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-secondary-900 text-white font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-secondary-800/50 backdrop-blur-md border border-secondary-700 rounded-xl;
+  }
+
+  .cctv-border {
+    @apply border border-primary-500/30 shadow-[0_0_10px_rgba(0,82,230,0.3)];
+  }
+
+  .scan-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .scan-effect::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-primary-500/20 to-transparent animate-scan;
+  }
+
+  .glow-effect {
+    @apply animate-glow;
+  }
+
+  .dashboard-card {
+    @apply glass-card p-6 hover:border-primary-500/50 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-secondary-900;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-700 hover:bg-secondary-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-secondary-600;
+  }
+
+  .btn-danger {
+    @apply bg-accent-red hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300;
+  }
+
+  .input-field {
+    @apply bg-secondary-700 border border-secondary-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary-500 transition-colors duration-300;
+  }
+
+  .table-header {
+    @apply bg-secondary-800 text-secondary-200 text-sm uppercase tracking-wider;
+  }
+
+  .table-row {
+    @apply border-b border-secondary-700 hover:bg-secondary-700/50 transition-colors;
+  }
+}
