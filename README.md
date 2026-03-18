@@ -81,4 +81,38 @@ This is the backend API for the CCTV Face Recognition System. It provides robust
 
 ---
 
-## 📁 Project Structure
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+- Python 3.9 or higher
+- MySQL 8.0
+- Redis (optional, for queues)
+- Git
+
+### Step-by-Step Setup
+
+```bash
+
+# 1. Create virtual environment
+python -m venv venv
+
+# 2. Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Linux/Mac:
+source venv/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Create .env file
+# Edit .env with your database credentials
+
+# 5. Initialize database
+mysql -u root -p < database/schema.sql
+
+# 6. Run the development server
+python run.py
